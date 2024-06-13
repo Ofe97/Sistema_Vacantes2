@@ -18,6 +18,14 @@ public class Horarios implements Serializable {
         return id_Horarios;
     }
 
+    public void setId_Horarios(int id_Horarios) {
+        this.id_Horarios = id_Horarios;
+    }
+
+    public String getTipo_de_horarios() {
+        return Tipo_de_horarios;
+    }
+
     public void setTipo_de_horarios(String tipo_de_horarios) {
         Tipo_de_horarios = tipo_de_horarios;
     }
@@ -29,4 +37,5 @@ public class Horarios implements Serializable {
                 ",Tipo_de_Horarios=' " + Tipo_de_horarios + '\'' +
                 '}';
     }
+
 }
