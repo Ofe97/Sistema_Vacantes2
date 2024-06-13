@@ -27,7 +27,7 @@ public class Horarios implements Serializable {
     }
 
     public void setTipo_de_horarios(String tipo_de_horarios) {
-        Tipo_de_horarios = tipo_de_horarios;
+      Tipo_de_horarios = tipo_de_horarios;
     }
 
     @Override

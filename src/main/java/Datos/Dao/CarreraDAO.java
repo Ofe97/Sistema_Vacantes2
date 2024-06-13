@@ -58,7 +58,7 @@ public class CarreraDAO {
          if(carreraEncontrada == null ){
              return null;
          }
-         this.ps =this.connection.prepareStatement("Update Carrera set Nombre_Carrera = ? where id_Carrera +?");
+         this.ps =this.connection.prepareStatement("Update Carrera set Nombre_Carrera = ? where id_Carrera = ?");
          this.ps.setString(1,Nombre_Carrera);
          this.ps.setInt(2,id_Carrera);
          this.ps.executeUpdate();
