@@ -1,5 +1,9 @@
 <html>
+<title>Sistema Vacantes </title>
 <body>
-<h2>Hello World!</h2>
+<link rel="stylesheet" href="Estilos/Estilo.css">
+
+<h2>Sistema Vacantes </h2>
+
 </body>
 </html>
