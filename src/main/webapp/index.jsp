@@ -1,9 +1,7 @@
 <html>
 <title>Sistema Vacantes </title>
 <body>
-<link rel="stylesheet" href="Estilos/Estilo.css">
-
-<h2>Sistema Vacantes </h2>
-
+<h1>Sistema Vacantes </h1>
+<p><a href="Login.jsp">Iniciar Sesion</a> </p>
 </body>
 </html>

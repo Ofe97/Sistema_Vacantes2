@@ -7,7 +7,7 @@ public class Usuarios implements Serializable {
     private String Contraseña;
     private int id_Rol;
 
-    public  Usuarios(){
+    public  Usuarios(String correo, String contraseña, int id_Rol){
 
     }
 

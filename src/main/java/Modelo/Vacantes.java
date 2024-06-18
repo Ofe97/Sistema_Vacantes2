@@ -10,7 +10,7 @@ public class Vacantes implements Serializable {
 
 
 
-    public  Vacantes(){
+    public  Vacantes(int cantidad, int tipo_Vacante, int horario, int postulaciones){
 
     }
 
