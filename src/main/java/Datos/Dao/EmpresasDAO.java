@@ -60,6 +60,33 @@ public class EmpresasDAO {
     }
 
 
+  //Editar Estado donde se ubica la empresa
+
+
+    public void editarEstado(int id_Empresa, String Estado)throws SQLException{
+        String sql ="Update Empresas set Estado = ? where id_Empresa = ? ";
+        try(PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setString(1,Estado);
+            statement.setInt(2,id_Empresa);
+            statement.executeUpdate();
+        }
+    }
+
+  //Editar Telefono Empresa
+
+    public void editarTelefono(int id_Empresa, String Telefono)throws SQLException{
+        String sql = "Update Empresas set Telefono = ? where id_Empresa = ?";
+        try(PreparedStatement statement= connection.prepareStatement(sql)){
+            statement.setString(1, Telefono);
+            statement.setInt(2,id_Empresa);
+            statement.executeUpdate();
+        }
+    }
+
+
+
+    //Editar Descripcion sobre la empresa
+
 
 
 
