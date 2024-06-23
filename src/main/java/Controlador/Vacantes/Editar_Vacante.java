@@ -3,7 +3,6 @@ package Controlador.Vacantes;
 import Datos.Dao.VacanteDAO;
 
 import javax.annotation.Resource;
-import javax.faces.component.html.HtmlPanelGrid;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import  javax.servlet.annotation.*;
