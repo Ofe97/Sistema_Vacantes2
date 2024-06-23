@@ -39,7 +39,7 @@ public  class Editar_Usuario extends HttpServlet{
 
            usuariosDAO.editarUsuario(Correo,Contraseña);
 
-           response.sendRedirect("Sistema Vacantes/Usuarios/Editar_Usuario.jps");
+           response.sendRedirect("Sistema_Vacantes/Usuarios/Editar_Usuario.jps");
        }catch (SQLException e){
            e.printStackTrace();
        }

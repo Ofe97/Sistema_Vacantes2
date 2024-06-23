@@ -48,6 +48,21 @@ public class VacanteDAO {
     }
 
 
+    //Editar Vacante
+
+   public void editarVacante(int Cantidad, int Tipo_Vacante, int Horario , int Postulaciones) throws SQLException{
+        String sql = "Update Vacantes set Cantidad = ?, Tipo_Vacante = ? , Horario = ? , Postulaciones = ? where Tipo_Vacante = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1,Cantidad);
+        statement.setInt(2, Tipo_Vacante);
+        statement.setInt(3,Horario);
+        statement.setInt(4,Postulaciones);
+        statement.executeUpdate();
+   }
+
+
+
 }
 
 
