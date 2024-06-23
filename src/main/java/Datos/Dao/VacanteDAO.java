@@ -5,6 +5,7 @@ import java.sql.Connection;
 import  java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
 public class VacanteDAO {
 
     private int Cantidad;
@@ -32,6 +33,21 @@ public class VacanteDAO {
         }
     }
 
+
+
+
+    //Eliminar vacante
+
+
+    public void eliminarVacante(int id_Vacante) throws SQLException {
+        String sql = "Delete from Vacantes where id_Vacante = ?";
+        try(PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setInt(1,id_Vacante);
+            statement.executeUpdate();
+        }
+    }
+
+
 }
 
-//Eliminar vacante
+
