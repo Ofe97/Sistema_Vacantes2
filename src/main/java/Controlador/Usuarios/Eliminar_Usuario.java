@@ -1,6 +1,6 @@
 package Controlador.Usuarios;
 import Datos.Dao.UsuariosDAO;
-import Modelo.Usuarios;
+
 
 
 import javax.annotation.Resource;

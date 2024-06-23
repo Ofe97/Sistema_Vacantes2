@@ -1,9 +1,9 @@
 package Controlador.Vacantes;
 
-import Datos.Dao.UsuariosDAO;
+
 import Datos.Dao.VacanteDAO;
 import Modelo.Vacantes;
-import com.sun.source.tree.ConditionalExpressionTree;
+
 
 
 import  javax.annotation.Resource;
@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 
 
-@WebServlet(name = "Agregar_Vacante",urlPatterns =  {"/Registrar_Vacante"})
+@WebServlet(name = "Agregar_Vacante",urlPatterns =  {"/Agregar_Vacante"})
 public class Agregar_Vacante extends HttpServlet {
 
       private  int Cantidad;
@@ -25,14 +25,12 @@ public class Agregar_Vacante extends HttpServlet {
       private  int Horario;
       private int Postulaciones;
 
-
-
       @Resource(name = "jdbc/database")
-    private  DataSource dataSource;
+      private  DataSource dataSource;
 
 
   @Override
-   protected  void doPost(HttpServletRequest request , HttpServletResponse response) throws ServletException,IOException{
+   protected void doPost(HttpServletRequest request , HttpServletResponse response) throws ServletException,IOException{
 
 
       Cantidad = Integer.parseInt(request.getParameter("Cantidad"));
@@ -51,7 +49,7 @@ public class Agregar_Vacante extends HttpServlet {
 
 
           Vacantes  vacantes = new Vacantes(Cantidad,Tipo_Vacante,Horario,Postulaciones);
-          VacanteDAO.agregarVacante(vacantes);
+          vacanteDAO.agregarVacante(vacantes);
 
           response.sendRedirect("Sistema_Vacantes/Vacantes/Registrar_Nueva_Vacante.jsp");
 

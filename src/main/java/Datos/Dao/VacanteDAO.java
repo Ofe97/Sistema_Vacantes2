@@ -1,7 +1,6 @@
 package Datos.Dao;
 
 import Modelo.Vacantes;
-import Modelo.Tipo_Vacante;
 import java.sql.Connection;
 import  java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,7 +21,7 @@ public class VacanteDAO {
 
     //Agregar nueva vacante
 
-    public void agregarVacante( Vacantes vacantes) throws SQLException{
+    public void agregarVacante(Vacantes vacantes) throws SQLException{
         String sql = "Insert into Vacantes(Cantidad, Tipo_Vacante, Horario, Postulaciones) values  (?,?,?,?)" ;
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setInt(1,Cantidad);
@@ -34,3 +33,5 @@ public class VacanteDAO {
     }
 
 }
+
+//Eliminar vacante
