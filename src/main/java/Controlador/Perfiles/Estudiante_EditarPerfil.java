@@ -56,8 +56,6 @@ public class Estudiante_EditarPerfil extends HttpServlet {
           connection = dataSource.getConnection();
           EstudiantesDAO estudiantesDAO = new EstudiantesDAO(connection);
 
-          Estudiantes estudiante = estudiantesDAO.getEstudiante(id_Estudiante);
-          request.getSession().setAttribute("Datos", estudiante);
 
           if(Nombre != null && Apellido_Paterno != null && Apellido_Materno != null && Tipo_de_titulo != 0 && Carrera != 0 && Universidad != 0 && Telefono_fijo != null && Telefono_celular != null){
               estudiantesDAO.editarNombre(id_Estudiante,Nombre);
