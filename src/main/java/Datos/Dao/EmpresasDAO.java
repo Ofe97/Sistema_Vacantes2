@@ -88,7 +88,14 @@ public class EmpresasDAO {
     //Editar Descripcion sobre la empresa
 
 
-
+     public void editarDescripcion(int id_Empresa, String Descripcion)throws  SQLException{
+        String sql ="Update Empresas set Descripcion = ? where id_Empresa = ?";
+        try(PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setString(1, Descripcion);
+            statement.setInt(2, id_Empresa);
+            statement.executeUpdate();
+        }
+     }
 
 
 
