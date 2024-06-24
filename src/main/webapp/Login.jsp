@@ -72,7 +72,7 @@
            <input type="password" id="password" name="password" required>
            <input type="submit" value="Accder">
        </form>
-       <a href="Login.jsp">Registrarse</a>
+       <a href="Registrar_Usuario.jsp">Registrarse</a>
    </div>
   </body>
 </html>

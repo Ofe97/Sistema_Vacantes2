@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 
 
-@WebServlet(name = "Empresa_EditarPerfil",urlPatterns = {"Empresa_EditarPerfil"})
+@WebServlet(name = "Empresa_EditarPerfil",urlPatterns = {"/Empresa_EditarPerfil"})
 public class  Empresa_EditarPerfil extends  HttpServlet{
 
 

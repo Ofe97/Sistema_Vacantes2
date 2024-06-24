@@ -4,6 +4,47 @@
 
 <head>
     <title>Registrar_Usuario</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            marging:0;
+        }
+        .container{
+            background-color: azure;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2{
+            margin-top: 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group button{
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: azure;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover{
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
    <div class="container">
