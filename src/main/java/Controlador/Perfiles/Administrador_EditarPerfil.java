@@ -13,6 +13,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 
+
+//Tambien cambie la estrucutra de mis servlets para ahorrar tiempo
 @WebServlet(name= "Administrador_EditarPerfil",urlPatterns = {"/Administrador_EditarPerfil"})
 public class Administrador_EditarPerfil extends HttpServlet {
 
@@ -23,7 +25,33 @@ public class Administrador_EditarPerfil extends HttpServlet {
 
     @Override
     protected  void doPost(HttpServletRequest request,HttpServletResponse response)throws  ServletException,IOException{
+      Administrador administrador = new Administrador();
 
+      administrador.setNombre(request.getParameter("Nombre"));
+      administrador.setCorreo(request.getParameter("Correo"));
+      administrador.setContraseña(request.getParameter("Contraseñ"));
+
+
+      Connection connection =null;
+
+
+      try{
+          connection =dataSource.getConnection();
+          AdministradorDAO administradorDAO = new AdministradorDAO(connection);
+          administradorDAO.editarPerfil(administrador);
+          response.sendRedirect("Sistema_Vacantes/Administrador_EditarPerfil/Editar_perfilAdmin.jsp");
+      }catch (SQLException e){
+          e.printStackTrace();
+      }
+       finally {
+          if (connection != null){
+              try{
+                  connection.close();
+              }catch (SQLException e){
+                  e.printStackTrace();
+              }
+          }
+      }
     }
 
 }
