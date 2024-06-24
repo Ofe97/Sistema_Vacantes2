@@ -4,8 +4,8 @@ public class Administrador {
 
   private int Admin_id;
   private String Nombre;
-  private String Email;
-  private String Password;
+  private String Correo;
+  private String Contraseña;
 
   private int Rol_id;
 
@@ -14,11 +14,11 @@ public class Administrador {
 
   }
 
-  public Administrador(int Admin_id, String Nombre, String Email, String Password, int Rol_id){
+  public Administrador(int Admin_id, String Nombre, String Correo, String Contraseña, int Rol_id){
       this.Admin_id= Admin_id;
       this.Nombre= Nombre;
-      this.Email= Email;
-      this.Password= Password;
+      this.Email= Correo;
+      this.Password= Contraseña;
       this.Rol_id= Rol_id;
 
   }
@@ -39,20 +39,20 @@ public class Administrador {
         Nombre = nombre;
     }
 
-    public String getEmail() {
-        return Email;
+    public String getCorreo() {
+        return Correo;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public void setCorreo(String correo) {
+        Correo = correo;
     }
 
-    public String getPassword() {
-        return Password;
+    public String getContraseña() {
+        return Contraseña;
     }
 
-    public void setPassword(String password) {
-        Password = password;
+    public void setContraseña(String contraseña) {
+        Contraseña = contraseña;
     }
 
     public int getRol_id() {
@@ -68,8 +68,8 @@ public class Administrador {
         return "Administrador{" +
                 "Admin_id =" + Admin_id +
                 ",Nombre Varchar=' " + Nombre + '\'' +
-                ",Email=' " + Email + '\'' +
-                ",Password=' " + Password + '\'' +
+                ",Correo=' " + Correo + '\'' +
+                ",Contraseña=' " + Contraseña+ '\'' +
                 " Rol_id=" + Rol_id +
                 '}';
     }
