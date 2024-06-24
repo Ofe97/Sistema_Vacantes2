@@ -17,8 +17,8 @@ public class Administrador {
   public Administrador(int Admin_id, String Nombre, String Correo, String Contraseña, int Rol_id){
       this.Admin_id= Admin_id;
       this.Nombre= Nombre;
-      this.Email= Correo;
-      this.Password= Contraseña;
+      this.Correo= Correo;
+      this.Contraseña= Contraseña;
       this.Rol_id= Rol_id;
 
   }
