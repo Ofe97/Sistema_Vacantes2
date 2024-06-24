@@ -4,19 +4,24 @@ import java.io.Serializable;
 public class Usuarios implements Serializable {
     private int id_Usuario;
     private  String  Correo;
-    private String Contraseña;
+    private String Contrasena;
     private int id_Rol;
 
-    public  Usuarios(String correo, String contraseña, int id_Rol){
+    public Usuarios(){
 
     }
 
+    public  Usuarios(String correo, String contrasena, int id_Rol){
+        this.Correo = correo;
+        this.Contrasena = contrasena;
+        this.id_Rol = id_Rol;
+    }
 
-   public Usuarios(int id_Usuario,String Correo, String Contraseña, int id_Rol){
+   public Usuarios(int id_Usuario,String Correo, String Contrasena, int id_Rol){
         this.id_Usuario= id_Usuario;
         this.id_Rol= id_Rol;
         this.Correo= Correo;
-        this.Contraseña= Contraseña;
+        this.Contrasena= Contrasena;
    }
 
     public int getId_Usuario() {
@@ -35,12 +40,12 @@ public class Usuarios implements Serializable {
         Correo = correo;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getContrasena() {
+        return Contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        Contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        Contrasena = contrasena;
     }
 
     public int getId_Rol() {
@@ -56,7 +61,7 @@ public class Usuarios implements Serializable {
         return "Usuarios{" +
                 ",id_Usuario=" + id_Usuario +
                 ",Correo=' " + Correo + '\'' +
-                ",Contrseña+' " + Contraseña + '\'' +
+                ",Contraseña+' " + Contrasena + '\'' +
                 ",id_Rol=" + id_Rol+
                 '}';
 

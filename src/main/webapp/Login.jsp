@@ -65,14 +65,15 @@
 <body>
    <div class="login-container">
        <h2>Inicio</h2>
-       <form  action="loginServlet" method="post">
+       <form  action="<%= request.getContextPath()%>/loginservlet" method="post">
            <label for="email">Correo:</label>
-           <input type="text" id="email" name="email" required>
+           <input type="text" id="email" name="Correo" required>
            <label for="password">Contraseña:</label>
-           <input type="password" id="password" name="password" required>
+           <input type="password" id="password" name="pass" required>
            <input type="submit" value="Accder">
        </form>
-       <a href="Registrar_Usuario.jsp">Registrarse</a>
+      <%--<a href="Vistas/Registrar_Usuario.jsp">Registrarse</a> --%>
+       <a href="<%= request.getContextPath()%>/Vistas/Registrar_Usuario.jsp">Registrarse</a>
    </div>
   </body>
 </html>

@@ -1,14 +1,12 @@
 package Controlador.Perfiles;
 
 import Datos.Dao.EmpresasDAO;
-import Modelo.Empresas;
 
 
 import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import javax.annotation.*;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
@@ -16,8 +14,8 @@ import java.sql.SQLException;
 
 
 
-@WebServlet(name = "Empresa_EditarPerfil",urlPatterns = {"/Empresa_EditarPerfil"})
-public class  Empresa_EditarPerfil extends  HttpServlet{
+@WebServlet(name = "Perfil_Empresa",urlPatterns = {"/Perfil_Empresa"})
+public class Perfil_Empresa extends  HttpServlet{
 
 
   private int id_Empresa;
@@ -63,7 +61,7 @@ public class  Empresa_EditarPerfil extends  HttpServlet{
              empresasDAO.editarDescripcion(id_Empresa,Descripcion);
 
          }
-         response.sendRedirect("Sistema_Vacantes/Empresa_EditarPerfil/Editar_Perfil.jsp");
+         response.sendRedirect("Sistema_Vacantes/Vistas/Perfil_Empresa.jsp");
       }catch (SQLException e){
           e.printStackTrace();
       }

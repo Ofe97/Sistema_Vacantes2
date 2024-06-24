@@ -2,84 +2,57 @@ package Controlador.Usuarios;
 
 import Datos.Dao.UsuariosDAO;
 import Modelo.Usuarios;
-
-
+import Datos.Conexion;
 import javax.annotation.Resource;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-
-
-@WebServlet(name = "Registrar_Usuario",urlPatterns = {"/Registrar_Usuario"})
-public class Registrar_Usuario extends HttpServlet{
-
-    private String Correo;
-    private String Contraseña;
-
-    private int  id_Rol;
-
-
-    @Resource(name = "jdbc/database")
-    private DataSource dataSource;
-
+@WebServlet(name = "Registrar_Usuario", urlPatterns = {"/Registrar_Usuario"})
+public class Registrar_Usuario extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException {
-
-        Correo = request.getParameter("Correo");
-        Contraseña = request.getParameter("Contraseña");
-        id_Rol = Integer.parseInt(request.getParameter("id_Rol"));
-
-        Connection connection= null;
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String correo = request.getParameter("Correo");
+        String contrasena = request.getParameter("pass");
+        int idRol;
 
         try {
+            idRol = Integer.parseInt(request.getParameter("id_Rol"));
+        } catch (NumberFormatException e) {
+            throw new ServletException("El id del rol debe ser un número", e);
+        }
 
-
-            connection = dataSource.getConnection();
+        try (Connection connection = Conexion.getConnection()) {
             UsuariosDAO usuariosDAO = new UsuariosDAO(connection);
 
             String seleccionarRol;
-            switch (id_Rol) {
+            switch (idRol) {
                 case 1:
                     seleccionarRol = "Estudiante";
-                   break;
-
+                    break;
                 case 2:
                     seleccionarRol = "Empresa";
-                     break;
+                    break;
                 case 3:
                     seleccionarRol = "Administrador";
                     break;
-
                 default:
-                    throw new ServletException("Rol invalido");
+                    throw new ServletException("Rol inválido");
             }
 
-            Usuarios usuario= new Usuarios( Correo, Contraseña, id_Rol);
+            Usuarios usuario = new Usuarios(correo, contrasena, idRol);
+            System.out.println(usuario.toString());
             usuariosDAO.insertarUsuario(usuario);
 
+            response.sendRedirect(request.getContextPath()+"/Vistas/Registrar_Usuario.jsp");
 
-            response.sendRedirect("Sistema_Vacantes/Registrar_Usuario/Regristar_Usuario.jsp");
-
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
-            throw new ServletException("Error al registrar Usuario");
+            throw new ServletException("Error al registrar Usuario", e);
         }
-        finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
     }
-
 }

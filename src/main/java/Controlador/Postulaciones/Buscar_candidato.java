@@ -1,4 +1,4 @@
 package Controlador.Postulaciones;
 
-public class Candidatos {
+public class Buscar_candidato {
 }

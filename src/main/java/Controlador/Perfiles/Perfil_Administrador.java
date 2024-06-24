@@ -15,8 +15,8 @@ import java.sql.SQLException;
 
 
 //Tambien cambie la estrucutra de mis servlets para ahorrar tiempo
-@WebServlet(name= "Administrador_EditarPerfil",urlPatterns = {"/Administrador_EditarPerfil"})
-public class Administrador_EditarPerfil extends HttpServlet {
+@WebServlet(name= "Perfil_Administrador",urlPatterns = {"/Perfil_Administrador"})
+public class Perfil_Administrador extends HttpServlet {
 
 
 
@@ -39,7 +39,7 @@ public class Administrador_EditarPerfil extends HttpServlet {
           connection =dataSource.getConnection();
           AdministradorDAO administradorDAO = new AdministradorDAO(connection);
           administradorDAO.editarPerfil(administrador);
-          response.sendRedirect("Sistema_Vacantes/Administrador_EditarPerfil/Editar_perfilAdmin.jsp");
+          response.sendRedirect("Sistema_Vacantes/Vistas/Perfil_Administrador.jsp");
       }catch (SQLException e){
           e.printStackTrace();
       }

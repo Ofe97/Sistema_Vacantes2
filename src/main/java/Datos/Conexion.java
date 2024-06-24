@@ -4,7 +4,7 @@ import java.sql.*;
 public class Conexion {
     private static String user = "postgres";
     private static String password = "12345678";
-    private static String bd = "Proyecto_Vacantes";
+    private static String bd = "Sistema_Vacantes";
     private static String server="jdbc:postgresql://localhost:5432/" + bd;
     private static String driver = "org.postgresql.Driver";
 
@@ -12,7 +12,6 @@ public class Conexion {
         try {
             Class.forName(driver);
             return DriverManager.getConnection(server, user, password);
-
         } catch (SQLException e){
             //e.printStackTrace();
             System.out.println("Error de conexión a la base de datos" + server);

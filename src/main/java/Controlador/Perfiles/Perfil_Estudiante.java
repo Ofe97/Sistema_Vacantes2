@@ -1,7 +1,6 @@
 package Controlador.Perfiles;
 
 import Datos.Dao.EstudiantesDAO;
-import Modelo.Estudiantes;
 
 
 import javax.annotation.Resource;
@@ -16,8 +15,8 @@ import  java.sql.SQLException;
 
 
 
-@WebServlet(name= "Estudiante_EditarPerfil",urlPatterns = {"/Estudiante_EditarPerfil"})
-public class Estudiante_EditarPerfil extends HttpServlet {
+@WebServlet(name= "Perfil_Estudiante",urlPatterns = {"/Perfil_Estudiante"})
+public class Perfil_Estudiante extends HttpServlet {
 
 
     private  int id_Estudiante;
@@ -67,7 +66,7 @@ public class Estudiante_EditarPerfil extends HttpServlet {
               estudiantesDAO.editarTelefono_fijo(id_Estudiante,Telefono_fijo);
               estudiantesDAO.editarTelefono_celular(id_Estudiante,Telefono_celular);
           }
-          response.sendRedirect("Sistema_Vacantes/Estudiante_EditarPerfil/Editar_Perfil.jsp");
+          response.sendRedirect("Sistema_Vacantes/Vistas/Perfil_Estudiante.jsp");
 
       }catch (SQLException e){
           e.printStackTrace();

@@ -4,6 +4,8 @@ import Modelo.Vacantes;
 import java.sql.Connection;
 import  java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class VacanteDAO {
@@ -60,6 +62,17 @@ public class VacanteDAO {
         statement.setInt(4,Postulaciones);
         statement.executeUpdate();
    }
+
+   // Obtener Vacantes por ID
+
+    public void obtenerVacantes(int id_Vacante) throws SQLException {
+        String sql = "Select from Vacantes where id_Vacante = ?";
+        try(PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setInt(1,id_Vacante);
+            statement.executeUpdate();
+        }
+    }
+
 
 
 
