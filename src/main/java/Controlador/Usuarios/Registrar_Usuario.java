@@ -47,11 +47,11 @@ public class Registrar_Usuario extends HttpServlet{
             switch (id_Rol) {
                 case 1:
                     seleccionarRol = "Estudiante";
-
+                   break;
 
                 case 2:
                     seleccionarRol = "Empresa";
-
+                     break;
                 case 3:
                     seleccionarRol = "Administrador";
                     break;
@@ -64,7 +64,7 @@ public class Registrar_Usuario extends HttpServlet{
             usuariosDAO.insertarUsuario(usuario);
 
 
-            response.sendRedirect("Sistema_Vacantes/Login/Regristar_Usuario.jsp");
+            response.sendRedirect("Sistema_Vacantes/Registrar_Usuario/Regristar_Usuario.jsp");
 
         }catch (SQLException e){
             e.printStackTrace();

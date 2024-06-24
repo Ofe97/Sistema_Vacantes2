@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import  java.sql.SQLException;
 
-public class EmpresasDAO {
+public class   EmpresasDAO {
 
     private String Nomre_Empresa;
 
