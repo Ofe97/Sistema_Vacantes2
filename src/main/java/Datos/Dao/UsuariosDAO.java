@@ -24,7 +24,7 @@ public class UsuariosDAO {
     //Registrar Usuario
 
     public void  insertarUsuario(Usuarios usuario) throws SQLException{
-        String sql = "Inser into Usuarios (Coreo,Contraseña,id_Rol) values (?,?,?) ";
+        String sql = "Insert into Usuarios (Coreo,Contraseña,id_Rol) values (?,?,?) ";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setString(1, usuario.getCorreo());
             preparedStatement.setString(2, usuario.getContraseña());
