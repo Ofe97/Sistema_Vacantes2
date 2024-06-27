@@ -5,7 +5,7 @@ public class Administrador {
   private int Admin_id;
   private String Nombre;
   private String Correo;
-  private String Contraseña;
+  private String Contrasena;
 
   private int Rol_id;
 
@@ -14,11 +14,11 @@ public class Administrador {
 
   }
 
-  public Administrador(int Admin_id, String Nombre, String Correo, String Contraseña, int Rol_id){
+  public Administrador(int Admin_id, String Nombre, String Correo, String Contrasena, int Rol_id){
       this.Admin_id= Admin_id;
       this.Nombre= Nombre;
       this.Correo= Correo;
-      this.Contraseña= Contraseña;
+      this.Contrasena= Contrasena;
       this.Rol_id= Rol_id;
 
   }
@@ -48,11 +48,11 @@ public class Administrador {
     }
 
     public String getContraseña() {
-        return Contraseña;
+        return Contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        Contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        Contrasena = contrasena;
     }
 
     public int getRol_id() {
@@ -69,7 +69,7 @@ public class Administrador {
                 "Admin_id =" + Admin_id +
                 ",Nombre Varchar=' " + Nombre + '\'' +
                 ",Correo=' " + Correo + '\'' +
-                ",Contraseña=' " + Contraseña+ '\'' +
+                ",Contraseña=' " + Contrasena+ '\'' +
                 " Rol_id=" + Rol_id +
                 '}';
     }

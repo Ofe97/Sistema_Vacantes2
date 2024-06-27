@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class Registrar_Usuario extends HttpServlet{
 
     private String Correo;
-    private String Contraseña;
+    private String Contrasena;
 
     private int  id_Rol;
 
@@ -32,7 +32,7 @@ public class Registrar_Usuario extends HttpServlet{
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException {
 
         Correo = request.getParameter("Correo");
-        Contraseña = request.getParameter("Contraseña");
+        Contrasena = request.getParameter("Contrasena");
         id_Rol = Integer.parseInt(request.getParameter("id_Rol"));
 
         Connection connection= null;
@@ -60,7 +60,7 @@ public class Registrar_Usuario extends HttpServlet{
                     throw new ServletException("Rol invalido");
             }
 
-            Usuarios usuario= new Usuarios( Correo, Contraseña, id_Rol);
+            Usuarios usuario= new Usuarios( Correo, Contrasena, id_Rol);
             usuariosDAO.insertarUsuario(usuario);
 
 
