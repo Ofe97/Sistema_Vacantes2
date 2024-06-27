@@ -5,6 +5,7 @@ import Modelo.Usuarios;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UsuariosDAO {
@@ -27,7 +28,7 @@ public class UsuariosDAO {
         String sql = "Insert into Usuarios (Coreo,Contraseña,id_Rol) values (?,?,?) ";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setString(1, usuario.getCorreo());
-            preparedStatement.setString(2, usuario.getContraseña());
+            preparedStatement.setString(2, usuario.getContrasena());
             preparedStatement.setInt(3,usuario.getId_Rol());
             preparedStatement.executeUpdate();
 
@@ -60,4 +61,24 @@ public class UsuariosDAO {
     }
 
 
+
+    public  int buscar(Usuarios usuario)throws  SQLException {
+        String sql = "select * from Usuarios where Correo = ? and Contraseña = ?";
+        try(PreparedStatement statement = connection.prepareStatement(sql)){
+            statement.setString(1,usuario.getCorreo());
+            statement.setString(2,usuario.getContrasena());
+            System.out.println(statement.toString());
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()){
+                id_Rol = resultSet.getInt("id_Rol");
+                Correo = resultSet.getString("Correo");
+                return 1;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("Entra aqui");
+            return 0;
+        }
+       return 0;
+    }
 }

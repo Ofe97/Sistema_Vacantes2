@@ -11,10 +11,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @WebServlet(name = "login", urlPatterns = {"/loginservlet"})
-public class login extends HttpServlet {
+public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String correo = request.getParameter("Correo");
         String contrasena = request.getParameter("pass");
 

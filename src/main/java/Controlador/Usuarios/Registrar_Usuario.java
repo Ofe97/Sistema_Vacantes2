@@ -60,7 +60,7 @@ public class Registrar_Usuario extends HttpServlet{
                     throw new ServletException("Rol invalido");
             }
 
-            Usuarios usuario= new Usuarios( Correo, Contrasena, id_Rol);
+            Usuarios usuario= new Usuarios();
             usuariosDAO.insertarUsuario(usuario);
 
 

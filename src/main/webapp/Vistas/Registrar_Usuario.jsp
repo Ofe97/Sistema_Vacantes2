@@ -48,7 +48,7 @@
 <body>
 <div class="container">
     <h2>Registrar Usuario</h2>
-    <form action="Registrar_Usuario" method="post">
+    <form action= <%= request.getContextPath()%> /Registrar_Usuario" method="post">
         <div class="form-group">
             <label for="Correo">Correo:</label>
             <input type="email" id="Correo" name="Correo" required>

@@ -47,7 +47,7 @@ public class Administrador {
         Correo = correo;
     }
 
-    public String getContraseña() {
+    public String getContrasena() {
         return Contrasena;
     }
 
