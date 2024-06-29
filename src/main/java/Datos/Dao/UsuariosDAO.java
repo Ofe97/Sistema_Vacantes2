@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class UsuariosDAO {
 
     private String Correo;
-    private String Contraseña;
+    private String Contrasena;
     private int id_Rol;
 
     private Connection connection;
@@ -25,7 +25,7 @@ public class UsuariosDAO {
     //Registrar Usuario
 
     public void  insertarUsuario(Usuarios usuario) throws SQLException{
-        String sql = "Insert into Usuarios (Coreo,Contraseña,id_Rol) values (?,?,?) ";
+        String sql = "Insert into Usuarios (Coreo,Contrasena,id_Rol) values (?,?,?) ";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setString(1, usuario.getCorreo());
             preparedStatement.setString(2, usuario.getContrasena());
@@ -49,13 +49,13 @@ public class UsuariosDAO {
 
  //Editar Usuario (Correo y Contraseña) Buscandolo por correo
 
-    public void editarUsuario(String Correo, String Contraseña) throws SQLException{
-        String sql = "Update Usuarios set Correo = ?,Contraseña = ? Where Correo = ?";
+    public void editarUsuario(String Correo, String Contrasena) throws SQLException{
+        String sql = "Update Usuarios set Correo = ?,Contrasena = ? Where Correo = ?";
 
         PreparedStatement statement = connection.prepareStatement(sql);
 
         statement.setString(1,Correo);
-        statement.setString(2,Contraseña);
+        statement.setString(2,Contrasena);
         statement.setString(3,Correo);
         statement.executeUpdate();
     }
@@ -63,7 +63,7 @@ public class UsuariosDAO {
 
 
     public  int buscar(Usuarios usuario)throws  SQLException {
-        String sql = "select * from Usuarios where Correo = ? and Contraseña = ?";
+        String sql = "select * from Usuarios where Correo = ? and Contrasena = ?";
         try(PreparedStatement statement = connection.prepareStatement(sql)){
             statement.setString(1,usuario.getCorreo());
             statement.setString(2,usuario.getContrasena());
