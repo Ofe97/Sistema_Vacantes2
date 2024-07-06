@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public  class Editar_Usuario extends HttpServlet{
 
     private String Correo;
-    private String Contraseña;
+    private String Contrasena;
 
 
     @Resource(name = "jdbc/database")
@@ -28,7 +28,7 @@ public  class Editar_Usuario extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException,IOException{
 
         Correo = request.getParameter("Correo");
-        Contraseña = request.getParameter("Contraseña");
+        Contrasena = request.getParameter("Contrasena");
 
         Connection connection = null;
 
@@ -37,7 +37,7 @@ public  class Editar_Usuario extends HttpServlet{
            UsuariosDAO usuariosDAO = new UsuariosDAO(connection);
 
 
-           usuariosDAO.editarUsuario(Correo,Contraseña);
+           usuariosDAO.editarUsuario(Correo,Contrasena);
 
            response.sendRedirect("Sistema_Vacantes/Usuarios/Editar_Usuario.jps");
        }catch (SQLException e){

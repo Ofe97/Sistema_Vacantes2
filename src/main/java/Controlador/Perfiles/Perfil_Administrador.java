@@ -29,7 +29,7 @@ public class Perfil_Administrador extends HttpServlet {
 
       administrador.setNombre(request.getParameter("Nombre"));
       administrador.setCorreo(request.getParameter("Correo"));
-      administrador.setContraseña(request.getParameter("Contraseñ"));
+      administrador.setContrasena(request.getParameter("Contrasena"));
 
 
       Connection connection =null;
