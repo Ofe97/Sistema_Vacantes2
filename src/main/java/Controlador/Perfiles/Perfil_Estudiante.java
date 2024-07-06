@@ -37,7 +37,7 @@ public class Perfil_Estudiante extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException{
-        //id_Estudiante = Integer.parseInt(request.getParameter("id_Estudiante"));
+        id_Estudiante = Integer.parseInt(request.getParameter("id_Estudiante"));
         Nombre = request.getParameter("Nombre");
         Apellido_Paterno = request.getParameter("Apellido_Paterno");
         Apellido_Materno = request.getParameter("Apellido_Materno");
